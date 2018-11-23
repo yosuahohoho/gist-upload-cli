@@ -1,0 +1,17 @@
+{
+  "name": "gist-cli-node",
+  "version": "1.0.0",
+  "description": "Upload code snippets to github gist from terminal.",
+  "main": "gist.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gist"
+  ],
+  "author": "yosuahohoho",
+  "license": "ISC",
+  "dependencies": {
+    "readline-sync": "^1.4.9"
+  }
+}
