@@ -5,7 +5,7 @@ const path = require('path')
 
 const userName = rl.question("Github Username: ")
 const password = rl.question("Github Password: ", {
-  hideEchoBack: false
+  hideEchoBack: true
 })
 const filePath = rl.questionPath("File Location: ", {
   isFile: true
@@ -13,7 +13,7 @@ const filePath = rl.questionPath("File Location: ", {
 const title = path.posix.basename(filePath)
 
 try {
-  const content = fs.readFileSync(filePath, 'utf8')
+  const content = fs.readFileSync(filePath, 'utf8') // Using synchronous read file method
 
   const options = {
     method: 'POST',
