@@ -1,22 +1,20 @@
 const fs = require('fs')
 const reqProm = require('request-promise')
-const path = require('path')
 
 const user = require('./handler/user')
+const file = require('./handler/file')
 
-// User information for basic authentication, need error handling
+// User information for basic authentication
 const userName = user.getName()
 const password = user.getPassword()
 
 // Code snippet file
-const filePath = rl.questionPath("File Location: ", {
-  isFile: true
-})
-const title = path.posix.basename(filePath)
+const fileLocation = file.getLocation()
+const title = file.getTitle(fileLocation)
 
 // Upload process to github gist
 try {
-  const content = fs.readFileSync(filePath, 'utf8')
+  const content = fs.readFileSync(fileLocation, 'utf8')
 
   const options = {
     method: 'POST',

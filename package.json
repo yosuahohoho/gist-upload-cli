@@ -2,12 +2,13 @@
   "name": "gist-cli-node",
   "version": "1.0.0",
   "description": "Upload code snippets to github gist from terminal.",
-  "main": "gist.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node gist.js"
+    "start": "node app.js"
   },
   "keywords": [
-    "gist"
+    "gist",
+    "upload gist"
   ],
   "author": "yosuahohoho",
   "license": "ISC",
