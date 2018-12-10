@@ -38,5 +38,5 @@ try {
       .catch( err => console.log(err.message))
 
 } catch(err) {
-  console.log('Error:', err.stack)
+  console.log('Error:', err.message)
 }
