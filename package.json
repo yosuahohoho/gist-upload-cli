@@ -4,7 +4,7 @@
   "description": "Upload code snippets to github gist from terminal.",
   "main": "gist.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node gist.js"
   },
   "keywords": [
     "gist"

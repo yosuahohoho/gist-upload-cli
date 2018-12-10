@@ -1,19 +1,22 @@
-const rl = require('readline-sync')
 const fs = require('fs')
-const rp = require('request-promise')
+const reqProm = require('request-promise')
 const path = require('path')
 
-const userName = rl.question("Github Username: ")
-const password = rl.question("Github Password: ", {
-  hideEchoBack: true
-})
+const user = require('./handler/user')
+
+// User information for basic authentication, need error handling
+const userName = user.getName()
+const password = user.getPassword()
+
+// Code snippet file
 const filePath = rl.questionPath("File Location: ", {
   isFile: true
 })
 const title = path.posix.basename(filePath)
 
+// Upload process to github gist
 try {
-  const content = fs.readFileSync(filePath, 'utf8') // Using synchronous read file method
+  const content = fs.readFileSync(filePath, 'utf8')
 
   const options = {
     method: 'POST',
@@ -32,11 +35,10 @@ try {
     json: true
   }
   
-  rp(options)
+  reqProm(options)
       .then( response => console.log(response['html_url']))
       .catch( err => console.log(err.message))
 
 } catch(err) {
   console.log('Error:', err.stack)
 }
-
